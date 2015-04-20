@@ -32,4 +32,31 @@ Then restart the service using `systemctl restart crond.service`
 
 This will run the script every 30 seconds and pipe the result to the log file located at **/var/log/web_monitor.log**
 
+## Logrotate /var/log/web_monitor.log
+
+One of the advantages of using the crontab way of installing this software is that it has the facility to output a logfile. In the example above it is configured to write the log file at /var/log/web_monitor.log
+
+In order to logrotate this file so it doesn't grow that big. We need to configure a file in `/etc/logrotate.d`. The file should containg something like this.
+
+```
+# Logrotate file for web_monitor
+
+/var/log/web_monitor.log {
+       	missingok
+	       compress
+	       daily
+	       rotate 15
+       	create 0644 root root
+}
+```
+
+This will configure the logrotate to rotate the file daily, and keep 15 days of logs. It will also compress the older files. 
+
+## Pushing the log information into logstash
+
+In order to push this information into logstash, you first need a correctly configured Logstash and an ElasticSearch server. There is a [guide](http://logstash.net/docs/1.4.2/tutorials/getting-started-with-logstash) that can help you get started to do this.
+
+Then you would need to configure an input, filter and output conf file to process the web_monitor.log and execute this conf file by using `/logstash -f web_monitor.conf`
+
+
 ---
