@@ -2,11 +2,11 @@
 
 This script is to monitor the number of httpd process that are running. This script has the following logic
 
-  * If the number is less than 10 processes, then print out “[LOW] Web Server OK!”
-  * If greater than 20 processes, then print out “[HIGH] Web Server Working hard!”
-  * If greater than 100 processes, then print out “[CRITICAL] Web Server under heavy load, restart required”
+  * If the number is less than 10 processes, then it will print out “[LOW] Web Server OK!”
+  * If greater than 20 processes, then it will print out “[HIGH] Web Server Working hard!”
+  * If greater than 100 processes, then it will print out “[CRITICAL] Web Server under heavy load, restart required”
 
-Additionally it will restart the httpd service if the server is Critical.  The script was tested for RHEL 7.1 but
+Additionally it will restart the httpd service if the server is **Critical**.  The script was tested for RHEL 7.1 but
 can be used on other linuxes with small modifications.
 
 ---
