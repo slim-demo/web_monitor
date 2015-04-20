@@ -21,7 +21,7 @@ The first version of the script called **web_monitor_with_timer.sh** it is meant
 
 ### Crontab version - web_monitor.sh
 
-The second version of this script called **web_monitor.sh** is meant to be run from the crontab. It is a better way to have this sript run unattended. To install you need to add the following code to /etc/crontab
+The second version of this script called **web_monitor.sh** is meant to be run from the crontab. It is a better way to have this script run unattended. To install you need to add the following code to /etc/crontab
 
 ```
 *  *  *  *  * root /root/web_monitor/web_monitor.sh >> /var/log/web_monitor.log 2>&1
