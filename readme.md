@@ -56,7 +56,8 @@ This will configure the logrotate to rotate the file daily, and keep 15 days of 
 
 In order to push this information into logstash, you first need a correctly configured Logstash and an ElasticSearch server. There is a [guide](http://logstash.net/docs/1.4.2/tutorials/getting-started-with-logstash) that can help you get started to do this.
 
-Then you would need to configure an input, filter and output conf file to process the web_monitor.log and execute this conf file by using `/logstash -f web_monitor.conf`
+Then you would need to configure an input, filter and output conf file to process the web_monitor.log and execute this conf file by using `/logstash -f web_monitor.conf` 
 
+That would start pushing the logs into logstash, and elasticsearch. Other analysis could be made from the elasticsearch repository.
 
 ---
